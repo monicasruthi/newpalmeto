@@ -1,0 +1,63 @@
+<html>
+<body style="background-color:pink">
+<div class="container">
+  <header class="header">
+    <h1 id="title" class="text-center" align="center">Bus Booking Form</h1>
+    <p id="description" class="description text-center" align="center">
+      Thank you for Choosing us
+    </p>
+  </header>
+  <form id="survey-form">
+  <center>
+    <div class="form-group">
+      <label id="name-label" for="name">Name</label>
+      <input
+        type="text"
+        name="name"
+        id="name"
+        class="form-control"
+        placeholder="Enter your name"
+        required
+      />
+    </div><br>
+    <div class="form-group">
+      <label id="email-label" for="email">Email</label>
+      <input
+        type="email"
+        name="email"
+        id="email"
+        class="form-control"
+        placeholder="Enter your Email"
+        required
+      />
+    </div><br>
+    <div class="form-group">
+      <label id="number-label" for="number"
+        >Age<span class="clue">(optional)</span></label
+      >
+      <input
+        type="number"
+        name="age"
+        id="number"
+        min="10"
+        max="99"
+        class="form-control"
+        placeholder="Age"
+      />
+    </div><br>
+<div class="form-group">
+<label id="gender-label" for="gender">
+gender<select><option></option><option>male</option><option>female></option></select></div><br>
+<div class="form-group">
+<label id="address-label" for="address">
+Address<textarea id="address"></textarea>
+</div><br>
+    <div class="form-group">
+      <button type="submit" id="submit" class="submit-button">
+        Submit
+      </button>
+    </div>
+  </form>
+</div>
+</body>
+</html>

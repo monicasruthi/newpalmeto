@@ -1,0 +1,57 @@
+package jdbc;
+	 
+import java.util.Iterator;
+	import java.util.List;
+import java.util.Scanner;
+
+import org.springframework.context.ApplicationContext;
+	import org.springframework.context.support.ClassPathXmlApplicationContext;
+	 
+	 
+	 
+	public class main
+	{
+	     public static void main(String[] args)
+	     {
+	    	 
+	    
+	    	 Scanner sc=new Scanner(System.in);
+		     System.out.println("enter employee id");
+		     Employee st=new Employee(int,String,String);
+		     System.out.println("enter id");
+		     int id=sc.nextInt();
+		     System.out.println("enter name:");
+		     String name=sc.next();
+		     System.out.println("enter age:");
+		     int age=sc.nextInt();
+		     st.setId(id);
+		     st.setFirstname(getFirstname);
+		     st.setLastname(lastname);
+		     int res=dao.addRecord(st);
+		     if(res==0) {
+		     System.out.println("record alredy exist with this id");
+		     }
+		     else
+		     System.out.println("record inserted...");
+	         
+	           
+	              ApplicationContext ctx=new ClassPathXmlApplicationContext("appcontext.xml"); 
+	          
+	              EmployeeDAO dao=(EmployeeDAO)ctx.getBean("edao");
+	             
+	              List<Employee> employee =dao.getEmployee();
+	               
+	              Iterator<Employee> itr=employee.iterator();
+	              for(Employee e:employee)
+	              {
+	                   System.out.println(e.getId()+" " +e.getFirstname()+" "+e.getLastname());
+	              }
+	         
+	              dao.getEmployee();
+	              
+	              
+	             
+	     }
+	}
+
+

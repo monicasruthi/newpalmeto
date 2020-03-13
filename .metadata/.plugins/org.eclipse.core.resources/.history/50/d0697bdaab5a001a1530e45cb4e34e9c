@@ -1,0 +1,36 @@
+package jdbc;
+
+import java.util.List;
+
+public class EmployeeDAO {
+
+	
+	private JdbcTemplate jdbcTemplate; 
+    
+    public void setJdbcTemplate(JdbcTemplate jdbcTemplate)
+    { 
+        this.jdbcTemplate = jdbcTemplate; 
+    } 
+   
+    public List<Employee> getEmployee() {
+         String sql="select * from empl";
+         List<Employee> list=jdbcTemplate.query(sql, new RowMapper<Employee>(){
+
+             public Employee mapRow(ResultSet rs, int rowNum) throws SQLException
+             {
+        
+                  Employee e=new Employee();
+                  e.setEmpid(rs.getString("empid"));
+                  e.setEname(rs.getString("ename"));
+                  e.setDept(rs.getString("dept"));
+                  e.setDesg(rs.getString("desg"));
+                  e.setEmail(rs.getString("email"));
+                  return e;
+                 
+             }
+         });
+         return list;
+    }
+    }
+
+}
